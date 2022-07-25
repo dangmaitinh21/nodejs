@@ -1,8 +1,9 @@
 const { engine } = require('express-handlebars');
 const express = require('express');
 const morgan = require('morgan');
-const route = require('./routes');
+var methodOverride = require('method-override');
 const path = require('path');
+const route = require('./routes');
 const app = express();
 const port = 3000;
 const db = require('./config/db/index');
@@ -20,6 +21,9 @@ app.use(
 ); //Xử lý cho form gửi lên server
 app.use(express.json()); //Xử lý cho JS gửi lên server
 
+//Override lại các phương thức xử lý với model
+app.use(methodOverride('_method'));
+
 //HTTP logger middleware
 app.use(morgan('combined'));
 
@@ -32,6 +36,9 @@ app.engine(
         partialsDir: [
             path.join(__dirname, 'resources', 'views', 'layouts', 'partials'),
         ],
+        helpers: {
+            sum: (a, b) => a + b,
+        },
     }),
 );
 
