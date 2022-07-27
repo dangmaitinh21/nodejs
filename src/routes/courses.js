@@ -7,6 +7,14 @@ const courseController = require('../app/controllers/CourseController');
 router.get('/create', courseController.create);
 router.post('/store', courseController.store);
 router.get('/:id/edit', courseController.edit);
+router.post(
+    '/execute-action-from-my-courses',
+    courseController.executeActionFromMyCourses,
+);
+router.post(
+    '/execute-action-from-trash',
+    courseController.executeActionFromTrash,
+);
 router.put('/:id', courseController.update);
 router.patch('/:id/restore', courseController.restore);
 router.delete('/:id', courseController.destroy);

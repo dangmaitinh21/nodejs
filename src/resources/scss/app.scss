@@ -10,3 +10,12 @@
     border-radius: 50%;
     margin-right: 4px;
 }
+
+.checkbox-select {
+    width: 192px;
+    margin: 0 16px;
+}
+
+.disabled {
+    pointer-events: none;
+}

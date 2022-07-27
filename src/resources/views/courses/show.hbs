@@ -1,12 +1,37 @@
 <div class="mt-4">
     <div class="row">
         <div class="col-lg-3">
-            <button>HỌC NGAY</button>
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title text-center alert alert-success">Thông tin khóa học</h6>
+                    <ul class="list-group list-group-flush my-4">
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-layer-group mr-2"></i> Trình độ cơ bản
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-film mr-2"></i> Tổng số 7 bài
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-hourglass mr-2"></i> Thời lượng 3h26'
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fa-solid fa-dollar-sign mr-2"></i> Miễn phí
+                        </li>
+                        
+                    </ul>
+                    <button class="btn btn-success mx-auto d-block">HỌC NGAY</button>
+                </div>
+            </div>
         </div>
         <div class="col-lg-9">
-            <h2>{{course.name}}</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoId}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>{{course.description}}</p>
+            <h4 class="alert alert-primary">{{course.name}}</h4>
+            <div class="mt-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoId}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="mt-4">
+                <h5>Mô tả khóa học:</h5>
+                <p class="ml-4">{{course.description}}</p>
+            </div>
         </div>
     </div>
 </div>
